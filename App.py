@@ -66,7 +66,7 @@ if st.session_state.data:
 
     # Excel Export
     output = BytesIO()
-    with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
+    with pd.ExcelWriter(output, engine="openpyxl") as writer:
         df_with_total.to_excel(writer, index=False, sheet_name="Weekly Earnings")
         worksheet = writer.sheets["Weekly Earnings"]
         worksheet.set_column("A:D", 20)
