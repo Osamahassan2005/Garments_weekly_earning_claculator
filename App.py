@@ -50,12 +50,12 @@ if st.session_state.data:
     for i, row in df.iterrows():
         if st.button(f"❌ Delete {row['Suit Name']}", key=f"del_{i}"):
             st.session_state.data.pop(i)
-            st.experimental_rerun()
+            st.rerun()
 
     # ------------------- CLEAR ALL -------------------
     if st.button("🔄 Clear All Data"):
         st.session_state.data = []
-        st.experimental_rerun()
+        st.rerun()
 
 else:
     st.info("No data added yet. Start by entering suit details above.")
